@@ -28,7 +28,7 @@ class Tower
 
 public:
 		Tower(std::string name, unsigned int damage, unsigned int range,
-				SpeedRatio shoot_ratio, Game* game);
+		SpeedRatio shoot_ratio, Game* game);
 		unsigned int fire();
 };
 

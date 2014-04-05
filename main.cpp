@@ -1,4 +1,3 @@
-
 //------------------------------------------------------------------------------
 // Filename: main.cpp
 // Description:
@@ -25,7 +24,6 @@ int main()
   game.addMonster( new Monster("Rat", 1, 2, 0, SpeedRatio(1, 1), &game ) );
 
   game.run();
-
 
   return 0;
 }

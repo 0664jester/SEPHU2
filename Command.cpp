@@ -9,7 +9,11 @@
 //------------------------------------------------------------------------------
 
 #include "Command.h"
-
+const int Command::COMMAND_SUCCESS = 1;
+const int Command::COMMAND_QUIT = 2;
+const int Command::COMMAND_ECHO = 3;
+const int Command::COMMAND_SHOW = 4; 
+//nicht definen: copy constr, assignment constructor
 
 //------------------------------------------------------------------------------
 Command::Command(std::string name) : command_name_(name)
