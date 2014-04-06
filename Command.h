@@ -35,7 +35,7 @@ class Command
 
   public:
     //--------------------------------------------------------------------------
-    // Consturctor
+    // Constructor
 
     Command(std::string name);
 
@@ -59,6 +59,8 @@ class Command
     static const int COMMAND_QUIT;
     static const int COMMAND_ECHO;
     static const int COMMAND_SHOW;
+    static const int ERROR_PARA;
+    //static const int ERROR_UNKN;
 };
 
 #endif //COMMAND_H_INCLUDED

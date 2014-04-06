@@ -8,14 +8,17 @@
 #ifndef SHOWCOMMAND_H
 #define	SHOWCOMMAND_H
 
+#include "Command.h"
+
+
 class ShowCommand : public Command {
 public:
   ShowCommand();
   virtual ~ShowCommand();
   virtual int execute(Game& board, std::vector<std::string>& params);
 private:
-  ShowCommand(const QuitCommand& orig); 
-  ShowCommand& operator=(const QuitCommand& original);  
+  ShowCommand(const ShowCommand& orig); 
+  ShowCommand& operator=(const ShowCommand& original);
 };
 
 #endif	/* SHOWCOMMAND_H */

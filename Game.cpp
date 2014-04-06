@@ -100,14 +100,29 @@ void Game::run()
         {
           return; 
         }
-      
         if( return_code == Command::COMMAND_ECHO )
+        {
+         
+          //TODO ERROR
+          if( params.size() == 1 )
+          {
+            std::cout << "Error: Wrong parameter count!" << std::endl;
+            break; 
+          }  
+            
+          return;
+        }
+      
+        if( return_code == Command::COMMAND_SHOW )
         { 
+
           return; 
         }
-//TODO Befehl Echo       
-//wenn keine parameter: Fehlermeldung
-//
+        else     
+        {
+            std::cout << "Error: Wrong parameter count!" << std::endl;
+            break;      
+        }
       }
     }
     
