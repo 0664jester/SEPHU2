@@ -90,11 +90,17 @@ void Game::run()
     }
     std::transform( params[0].begin(), params[0].end(), params[0].begin(), 
             ::tolower ); //start, ende, überschreiben auf start
-    for(unsigned int i = 0;i<command_array_.size();i++)
+    
+    for( unsigned int i = 0;i<command_array_.size();i++ )
     {
+//      if( params[0] != command_array_[i]->getName() )
+//      {
+//        std::cout << "Error: Unknown command!" << std::endl;
+//        break;
+//      }
       if( params[0] == command_array_[i]->getName() )
       {
-        int return_code = command_array_[i]->execute(*this, params);
+        int return_code = command_array_[i]->execute( *this, params );
         //this is ein spezial pointer auf das aktuelle objekt &
         if( return_code == Command::COMMAND_QUIT )
         {
@@ -102,30 +108,17 @@ void Game::run()
         }
         if( return_code == Command::COMMAND_ECHO )
         {
-         
-          //TODO ERROR
           if( params.size() == 1 )
           {
             std::cout << "Error: Wrong parameter count!" << std::endl;
-            break; 
           }  
-            
-          return;
         }
-      
         if( return_code == Command::COMMAND_SHOW )
         { 
-
           return; 
-        }
-        else     
-        {
-            std::cout << "Error: Wrong parameter count!" << std::endl;
-            break;      
-        }
+        }     
       }
     }
-    
     for( unsigned int i = 0;i<params.size();i++ ) 
     {
       ss.clear();

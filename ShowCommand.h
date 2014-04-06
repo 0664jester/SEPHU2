@@ -9,13 +9,15 @@
 #define	SHOWCOMMAND_H
 
 #include "Command.h"
-
+#include "Game.h"
 
 class ShowCommand : public Command {
 public:
   ShowCommand();
   virtual ~ShowCommand();
   virtual int execute(Game& board, std::vector<std::string>& params);
+  Game::Game(unsigned int cash, unsigned int player_hp, unsigned int width, 
+          unsigned int height);
 private:
   ShowCommand(const ShowCommand& orig); 
   ShowCommand& operator=(const ShowCommand& original);
